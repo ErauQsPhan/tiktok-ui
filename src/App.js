@@ -11,7 +11,6 @@ function App() {
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         let Layout = DefaultLayout;
-                        console.log(route.layout);
                         if (route.layout) {
                             Layout = route.layout;
                         } else if (route.layout === null) {
