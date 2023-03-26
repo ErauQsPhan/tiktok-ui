@@ -22,9 +22,13 @@
 .logo {
 }
 
+.search,
+.search-result {
+    width: 361px;
+}
+
 .search {
     position: relative;
-    width: 361px;
     height: var(--search-height);
     display: flex;
     background: rgba(22, 24, 35, 0.06);
@@ -46,6 +50,14 @@
     input:not(:placeholder-shown) ~ .search-btn {
         color: rgba(22, 24, 35, 0.75);
     }
+}
+.search-result {
+}
+
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    color: rgba(22, 24, 35, 0.5);
 }
 
 .clear,
