@@ -16,6 +16,7 @@ function Button({
     outline = false,
     small = false,
     large = false,
+    className,
     leftIcon,
     rightIcon,
     ...passProps
@@ -42,6 +43,7 @@ function Button({
         Comp = 'a';
     }
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         base,
         rounded,

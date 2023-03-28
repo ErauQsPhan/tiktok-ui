@@ -6,7 +6,6 @@ import styles from './AccountItems.module.scss';
 const cx = classNames.bind(styles);
 
 function AccountItems(props) {
-    console.log(props);
     return (
         <div className={cx('wrapper')}>
             <img
