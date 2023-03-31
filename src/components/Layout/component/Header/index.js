@@ -6,13 +6,6 @@ import {
     faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
-    faEarthAsia,
-    faCircleQuestion,
-    faKeyboard,
-    faUser,
-    faGear,
-    faCoins,
-    faArrowRightToBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -25,8 +18,19 @@ import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItems from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
-import { faMessage, faMoon } from '@fortawesome/free-regular-svg-icons';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
+import {
+    CoinIcon,
+    InboxIcon,
+    KeyboardIcon,
+    LanguageIcon,
+    LogoutIcon,
+    MarkIcon,
+    MessageIcon,
+    MoonIcon,
+    SettingIcon,
+    UserIcon,
+} from '~/components/Fonts';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +38,7 @@ const currentUser = true;
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -53,16 +57,16 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <MarkIcon />,
         title: 'Feadback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboardIcon />,
         title: 'Keyboard shortcuts',
     },
     {
-        icon: <FontAwesomeIcon icon={faMoon} />,
+        icon: <MoonIcon />,
         title: 'Dark mode',
     },
 ];
@@ -82,23 +86,23 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <UserIcon />,
             title: 'View Profile',
             to: '/b.lan_anh',
         },
         {
-            icon: <FontAwesomeIcon icon={faCoins} />,
+            icon: <CoinIcon />,
             title: 'Get Coins',
             to: '/coins',
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <SettingIcon />,
             title: 'Settings',
             to: '/settings',
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightToBracket} />,
+            icon: <LogoutIcon />,
             title: 'Log out',
             separate: true,
         },
@@ -154,12 +158,12 @@ function Header() {
                         <>
                             <Tippy content="Messages" delay={200}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faTelegram} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" delay={200}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -170,10 +174,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
-                                src="https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-1/200589943_3541846406039637_3985123333451515740_n.jpg?stp=cp0_dst-jpg_p56x56&_nc_cat=109&ccb=1-7&_nc_sid=7206a8&_nc_ohc=C8lkPBWxiPgAX-iuEv3&_nc_ht=scontent.fsgn13-2.fna&oh=00_AfB9xmyDaavAFKWZhxpRBGr6wjNTn7evMS_cYQf8lVP7Bg&oe=6445D03B"
+                            <Image
+                                src="ttps://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-1/200589943_3541846406039637_3985123333451515740_n.jpg?stp=cp0_dst-jpg_p56x56&_nc_cat=109&ccb=1-7&_nc_sid=7206a8&_nc_ohc=C8lkPBWxiPgAX-iuEv3&_nc_ht=scontent.fsgn13-2.fna&oh=00_AfB9xmyDaavAFKWZhxpRBGr6wjNTn7evMS_cYQf8lVP7Bg&oe=6445D03B"
                                 className={cx('user-avatar')}
                                 alt="Bui Lan Anh"
+                                fallback="https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-1/200589943_3541846406039637_3985123333451515740_n.jpg?stp=cp0_dst-jpg_p56x56&_nc_cat=109&ccb=1-7&_nc_sid=7206a8&_nc_ohc=C8lkPBWxiPgAX-iuEv3&_nc_ht=scontent.fsgn13-2.fna&oh=00_AfB9xmyDaavAFKWZhxpRBGr6wjNTn7evMS_cYQf8lVP7Bg&oe=6445D03B"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
